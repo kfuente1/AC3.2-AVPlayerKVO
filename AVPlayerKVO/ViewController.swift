@@ -12,6 +12,8 @@ import AVFoundation
 private var kvoContext = 0
 
 class ViewController: UIViewController {
+    @IBOutlet weak var durationLabel: UILabel!
+    @IBOutlet weak var currentPositionLabel: UILabel!
     var player: AVPlayer! {
         willSet {
             if player != nil {
@@ -76,6 +78,9 @@ class ViewController: UIViewController {
         
         let currentPlace = Float(item.currentTime().seconds / item.duration.seconds)
         self.positionSlider.value = currentPlace
+
+        currentPositionLabel.text = String(format: "%0.2f",(item.currentTime().seconds * 0.01666))
+        durationLabel.text = String(format: "%0.2f",item.duration.seconds * 0.01666)
     }
     
     func loadAssetFromFile(urlString: String) {
@@ -120,7 +125,6 @@ class ViewController: UIViewController {
         let newPosition = Double(sender.value) * item.duration.seconds
         
         player.seek(to: CMTime(seconds: newPosition, preferredTimescale: 1000))
-        
         player.playImmediately(atRate: userPlayRate)
     }
     

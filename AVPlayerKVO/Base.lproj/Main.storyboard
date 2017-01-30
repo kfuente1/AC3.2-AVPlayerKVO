@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -55,6 +56,18 @@
                                     <action selector="playPausePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jfn-Iw-k81"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="slB-rs-lRz">
+                                <rect key="frame" x="301" y="257" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="779-IL-OHS">
+                                <rect key="frame" x="31" y="257" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -63,17 +76,23 @@
                             <constraint firstItem="cD4-Np-Xoz" firstAttribute="width" secondItem="nVF-Hz-CEb" secondAttribute="width" multiplier="0.5" id="HmT-uO-USe"/>
                             <constraint firstItem="cD4-Np-Xoz" firstAttribute="leading" secondItem="nVF-Hz-CEb" secondAttribute="leading" id="JUl-RM-rcH"/>
                             <constraint firstItem="nVF-Hz-CEb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="39" id="QbN-FE-ZjU"/>
+                            <constraint firstItem="779-IL-OHS" firstAttribute="top" secondItem="nVF-Hz-CEb" secondAttribute="bottom" constant="29" id="UBC-uO-ItJ"/>
                             <constraint firstItem="1ly-M6-eNm" firstAttribute="top" secondItem="nVF-Hz-CEb" secondAttribute="bottom" constant="8" id="Xiz-rI-VtE"/>
                             <constraint firstItem="E6O-cK-MpY" firstAttribute="bottom" secondItem="cD4-Np-Xoz" secondAttribute="bottom" id="gOM-Xh-l20"/>
                             <constraint firstItem="1ly-M6-eNm" firstAttribute="width" secondItem="nVF-Hz-CEb" secondAttribute="width" id="hlB-1n-lBG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="slB-rs-lRz" secondAttribute="trailing" constant="16" id="kAi-J1-LOo"/>
                             <constraint firstItem="T9j-cV-S5e" firstAttribute="leading" secondItem="cD4-Np-Xoz" secondAttribute="leading" id="mKg-y3-FrR"/>
                             <constraint firstItem="1ly-M6-eNm" firstAttribute="leading" secondItem="nVF-Hz-CEb" secondAttribute="leading" id="nAP-MJ-dTP"/>
                             <constraint firstItem="cD4-Np-Xoz" firstAttribute="top" secondItem="T9j-cV-S5e" secondAttribute="bottom" constant="4" id="pGc-Vt-ob4"/>
                             <constraint firstItem="nVF-Hz-CEb" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="pan-ac-QrX"/>
+                            <constraint firstItem="slB-rs-lRz" firstAttribute="top" secondItem="nVF-Hz-CEb" secondAttribute="bottom" constant="29" id="tuH-SN-l7i"/>
                             <constraint firstItem="nVF-Hz-CEb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ul8-ia-Pdo"/>
+                            <constraint firstItem="779-IL-OHS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="15" id="v5v-Al-8rS"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="currentPositionLabel" destination="779-IL-OHS" id="0lo-fk-dG3"/>
+                        <outlet property="durationLabel" destination="slB-rs-lRz" id="pRi-1L-Ykx"/>
                         <outlet property="playPauseButton" destination="E6O-cK-MpY" id="BWm-vZ-vKW"/>
                         <outlet property="positionSlider" destination="1ly-M6-eNm" id="0OK-18-jMa"/>
                         <outlet property="videoContainer" destination="nVF-Hz-CEb" id="tPh-Fs-BpL"/>
